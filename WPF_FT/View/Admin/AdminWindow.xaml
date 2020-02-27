@@ -1,0 +1,57 @@
+﻿<Window x:Class="WPF_FT.View.Admin.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WPF_FT.ViewModel.Admin"
+        xmlns:local="clr-namespace:WPF_FT.View.Admin"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:AdminWindowViewModel}"
+        Title="AdminWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="7*" />
+                <RowDefinition Height="7*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="81*"/>
+                <ColumnDefinition Width="77*"/>
+                <ColumnDefinition Width="66*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="관리자 모드" Grid.Row="0" FontSize="35" Grid.ColumnSpan="2" FontWeight="Bold" ></TextBlock>
+            <DataGrid Name="membersGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="3" ItemsSource="{Binding MemberCollection}" AutoGenerateColumns="False" CanUserAddRows="false" >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate >
+                                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center" Name="chkBox" IsChecked="{Binding IsSelect, Mode = TwoWay , UpdateSourceTrigger=PropertyChanged}" ></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="아이디" Binding="{Binding ID, Mode = TwoWay , UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTextColumn Header="이름" Binding="{Binding NAME, Mode = TwoWay , UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="권한" Binding="{Binding AUTH, Mode = TwoWay , UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="비밀번호" Binding="{Binding PASSWORD, Mode = TwoWay , UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Grid Grid.Row="1" Grid.RowSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                    <RowDefinition Height="25*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Height="50" Content="새로고침"  Command="{Binding ButtonCommand}" CommandParameter="refresh" />
+                <Button Grid.Row="1" Height="50" Content="아이디 생성"    Command="{Binding ButtonCommand}" CommandParameter="insert" />
+                <Button Grid.Row="2" Height="50" Content="삭제"  Command="{Binding ButtonCommand}" CommandParameter="delete" />
+                <Button Grid.Row="3" Height="50" Content="적용" Command="{Binding ButtonCommand}" CommandParameter="apply" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

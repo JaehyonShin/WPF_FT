@@ -1,0 +1,46 @@
+﻿<Window x:Class="WPF_FT.View.Join.JoinWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_FT.View.Join"
+        xmlns:vm="clr-namespace:WPF_FT.ViewModel.Join"
+        d:DataContext="{d:DesignInstance vm:JoinWindowViewModel}"
+        mc:Ignorable="d"
+        Title="회원가입" Height="319.737" Width="360.526" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="textBlockStyle">
+            <Setter Property="TextBlock.FontWeight" Value="Bold"></Setter>
+            <Setter Property="TextBlock.VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="TextBlock.TextAlignment" Value="Right"></Setter>
+            <Setter Property="TextBlock.FontSize" Value="20"></Setter>
+        </Style>
+        <Style x:Key="textBoxStyle">
+            <Setter Property="TextBox.FontSize" Value="20"></Setter>
+            <Setter Property="TextBox.Margin" Value="0 15 0 15"></Setter>
+            <Setter Property="TextBox.VerticalAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="LightGray">
+        <Grid Margin="52,23,52,24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="25*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"></ColumnDefinition>
+                <ColumnDefinition Width="25*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="아이디 : " Grid.Row="0" Style="{StaticResource ResourceKey=textBlockStyle}" ></TextBlock>
+            <TextBlock Text="이름 : " Grid.Row="1"  Style="{StaticResource ResourceKey=textBlockStyle}"></TextBlock>
+            <TextBlock Text="비밀번호 : " Grid.Row="2"  Style="{StaticResource ResourceKey=textBlockStyle}"></TextBlock>
+            <TextBox Name="tbID" Grid.Row="0" Grid.Column="1"  Style="{StaticResource ResourceKey=textBoxStyle}"></TextBox>
+            <TextBox Name="tbName" Grid.Row="1" Grid.Column="2"  Style="{StaticResource ResourceKey=textBoxStyle}"></TextBox>
+            <PasswordBox Name="pbPassWord" Grid.Row="2" Grid.Column="3"  Style="{StaticResource ResourceKey=textBoxStyle}"></PasswordBox>
+            <Button Name="btnCancel" Grid.Row="3" Grid.Column="0" Content="취소" FontSize="25" FontWeight="Bold" Height="50" Command="{Binding ButtonClick}" CommandParameter="Cancel"></Button>
+            <Button Name="btnSave" Grid.Row="3" Grid.Column="1" Content="생성" Margin="45 0 0 0" FontSize="25" Height="50" FontWeight="Bold" Command="{Binding ButtonClick}" CommandParameter="Save"></Button>
+        </Grid>
+    </Grid>
+</Window>

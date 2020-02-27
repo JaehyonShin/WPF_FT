@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPF_FT.View.Setting.SettingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:WPF_FT.ViewModel.Setting"
+        xmlns:local="clr-namespace:WPF_FT.View.Setting"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance vm:SettingWindowViewModel}"
+        Title="SettingWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"></RowDefinition>
+                <RowDefinition Height="88*"></RowDefinition>
+                <RowDefinition Height="299*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+                <ColumnDefinition Width="18*"></ColumnDefinition>
+                <ColumnDefinition Width="19*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="문제 설정"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Name="tbQuestion"></TextBlock>
+            <DataGrid Name="gridQuestion" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding QuestionCollection}" AutoGenerateColumns="False" >
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn Binding="{Binding QUESTION_ID, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
+                    <!--<DataGridTextColumn Binding="{Binding QUESTION_USER_ID, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>-->
+                    <DataGridTextColumn Header="순번" Binding="{Binding ROW_INDEX, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="문제" Binding="{Binding QUESTION_TEXT, Mode = TwoWay, UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>
