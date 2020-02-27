@@ -93,6 +93,20 @@
     <Compile Include="Model\questionDetail.cs" />
     <Compile Include="Model\rank.cs" />
     <Compile Include="Model\score.cs" />
+    <Compile Include="obj\Debug\App.g.cs" />
+    <Compile Include="obj\Debug\App.g.i.cs" />
+    <Compile Include="obj\Debug\GeneratedInternalTypeHelper.g.i.cs" />
+    <Compile Include="obj\Debug\MainWindow.g.i.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Debug\View\Admin\AdminWindow.g.i.cs" />
+    <Compile Include="obj\Debug\View\Join\JoinWindow.g.i.cs" />
+    <Compile Include="obj\Debug\View\LoginWindow.g.i.cs" />
+    <Compile Include="obj\Debug\View\MainWindow.g.i.cs" />
+    <Compile Include="obj\Debug\View\Play\SelectUserWindow.g.i.cs" />
+    <Compile Include="obj\Debug\View\Setting\SettingWindow.g.i.cs" />
+    <Compile Include="obj\Debug\WPF_FT_Content.g.i.cs" />
     <Compile Include="ViewModel\Play\SelectUserWindowViewModel.cs" />
     <Compile Include="ViewModel\Setting\SettingWindowViewModel.cs" />
     <Compile Include="View\Play\SelectUserWindow.xaml.cs">
@@ -165,13 +179,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="obj\Debug\WPF_FT.g.resources" />
+    <EmbeddedResource Include="obj\Debug\WPF_FT.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\Data\a.sqlite" />
+    <None Include="bin\Debug\System.Data.SQLite.dll.config" />
+    <None Include="bin\Debug\WPF_FT.exe.config" />
     <None Include="Data\a.sqlite">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\WPF_FT.csproj.CopyComplete" />
+    <None Include="obj\Debug\WPF_FT.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\WPF_FT.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\WPF_FT.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\WPF_FT_MarkupCompile.cache" />
+    <None Include="obj\Debug\WPF_FT_MarkupCompile.i.cache" />
+    <None Include="obj\Debug\WPF_FT_MarkupCompile.lref" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -181,7 +209,37 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\CommonServiceLocator.dll" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Resource Include="obj\Debug\WPF_FT.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\WPF_FT.exe" />
+    <Content Include="obj\Debug\WPF_FT.pdb" />
+    <Resource Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Resource Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\Prism.dll" />
+    <Content Include="bin\Debug\Prism.pdb" />
+    <Content Include="bin\Debug\Prism.Wpf.dll" />
+    <Content Include="bin\Debug\Prism.Wpf.pdb" />
+    <Resource Include="bin\Debug\Prism.Wpf.xml" />
+    <Resource Include="bin\Debug\Prism.xml" />
+    <Content Include="bin\Debug\System.Data.SQLite.dll" />
+    <Content Include="bin\Debug\System.Data.SQLite.EF6.dll" />
+    <Content Include="bin\Debug\System.Data.SQLite.Linq.dll" />
+    <Resource Include="bin\Debug\System.Data.SQLite.xml" />
+    <Content Include="bin\Debug\System.ValueTuple.dll" />
+    <Resource Include="bin\Debug\System.ValueTuple.xml" />
+    <Content Include="bin\Debug\System.Windows.Interactivity.dll" />
+    <Content Include="bin\Debug\WPF_FT.exe" />
+    <Content Include="bin\Debug\WPF_FT.pdb" />
+    <Content Include="bin\Debug\x64\SQLite.Interop.dll" />
+    <Content Include="bin\Debug\x86\SQLite.Interop.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
